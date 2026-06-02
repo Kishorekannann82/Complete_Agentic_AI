@@ -1,0 +1,12 @@
+deepagents
+langgraph
+langchain
+langchain-community
+langchain-groq
+tavily-python
+python-dotenv
+langsmith
+pydantic
+typing-extensions
+ipython
+ipykernel
