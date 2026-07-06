@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Loaders Tutorial | Kishorelytics</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;color:#333;line-height:1.7;margin:0}
+header{background:#1f4e79;color:#fff;padding:30px;text-align:center}
+main{max-width:900px;margin:auto;background:#fff;padding:30px}
+h2{color:#1f4e79;border-bottom:2px solid #ddd;padding-bottom:6px}
+code,pre{background:#f1f1f1;padding:10px;border-radius:6px;display:block;overflow:auto}
+.note{background:#fff8d6;border-left:5px solid #f4c542;padding:12px;margin:15px 0}
+footer{text-align:center;padding:20px;color:#666}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #ccc;padding:10px}
+th{background:#e8eef5}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Data Loaders in Machine Learning</h1>
+<p>A Beginner-Friendly Tutorial by <strong>Kishore Kannan N</strong> | Kishorelytics</p>
+</header>
+
+<main>
+
+<h2>What is a Data Loader?</h2>
+<p>A Data Loader is responsible for loading data from a dataset and feeding it to a machine learning model efficiently. Instead of loading the entire dataset into memory, it loads data in small batches, making training faster and memory efficient.</p>
+
+<h2>Why Do We Need a Data Loader?</h2>
+<ul>
+<li>Loads data in batches</li>
+<li>Shuffles training data</li>
+<li>Supports parallel loading using multiple workers</li>
+<li>Improves GPU utilization</li>
+<li>Reduces memory usage</li>
+</ul>
+
+<h2>Workflow</h2>
+<ol>
+<li>Dataset stores all samples.</li>
+<li>DataLoader reads samples.</li>
+<li>Creates mini-batches.</li>
+<li>Optionally shuffles data.</li>
+<li>Feeds batches to the model.</li>
+</ol>
+
+<div class="note">
+<b>Tip:</b> Mini-batch training is faster and more stable than processing the entire dataset at once.
+</div>
+
+<h2>PyTorch Example</h2>
+
+<pre><code>from torch.utils.data import DataLoader
+from torchvision.datasets import MNIST
+from torchvision import transforms
+
+dataset = MNIST(
+    root="data",
+    train=True,
+    download=True,
+    transform=transforms.ToTensor()
+)
+
+loader = DataLoader(
+    dataset,
+    batch_size=32,
+    shuffle=True
+)
+
+for images, labels in loader:
+    print(images.shape, labels.shape)
+    break
+</code></pre>
+
+<h2>Important Parameters</h2>
+
+<table>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>batch_size</td>
+<td>Number of samples in one batch.</td>
+</tr>
+
+<tr>
+<td>shuffle</td>
+<td>Randomly shuffles data every epoch.</td>
+</tr>
+
+<tr>
+<td>num_workers</td>
+<td>Loads data using multiple CPU workers.</td>
+</tr>
+
+<tr>
+<td>drop_last</td>
+<td>Drops the last incomplete batch.</td>
+</tr>
+
+<tr>
+<td>pin_memory</td>
+<td>Speeds up GPU data transfer.</td>
+</tr>
+
+</table>
+
+<h2>Summary</h2>
+
+<ul>
+<li>Dataset stores data.</li>
+<li>DataLoader serves batches.</li>
+<li>Batching improves speed.</li>
+<li>Shuffling improves generalization.</li>
+<li>Essential for deep learning training.</li>
+</ul>
+
+</main>
+
+<footer>
+© 2026 Kishorelytics | Created by Kishore Kannan N
+</footer>
+
+</body>
+</html>

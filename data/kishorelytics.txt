@@ -1,0 +1,10 @@
+Kishorelytics is a technology-focused YouTube channel founded by Kishore Kannan N, 
+dedicated to simplifying complex concepts in Data Analytics, Data Science, Artificial Intelligence, and Software Engineering. 
+Through step-by-step tutorials, hands-on projects, career guidance, and real-world demonstrations, 
+the channel helps students, freshers, and professionals build practical, industry-ready skills. 
+Kishorelytics covers a wide range of technologies, including Python, SQL, Power BI, Machine Learning, 
+AI Agents, RAG, LangChain, Azure, and other modern tools.
+ By delivering easy-to-understand content in both Tamil and English, the channel aims to bridge the gap
+between theory and real-world implementation,
+empowering learners
+ to confidently build projects, prepare for interviews, and advance their careers in technology.
